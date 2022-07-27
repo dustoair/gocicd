@@ -1,6 +1,5 @@
 all: build-darwin-amd64 build-darwin-arm64 build-linux-amd64 build-linux-arm64 build-windows-amd64
 
-
 build-darwin-amd64:
 	mkdir -p build
     CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go mod tidy
