@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"net/http"
+)
 
 func main() {
-	fmt.Println("test for cicd in golang")
+	http.HandleFunc("/", IPHandle)
+	log.Println("server start!")
+	http.ListenAndServe(":8080", nil)
+
+}
+func IPHandle(w http.ResponseWriter, req *http.Request) {
+	fmt.Fprintf(w, "Hello World")
 }
